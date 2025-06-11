@@ -350,3 +350,50 @@ ul {
     padding-left: 0;
 }
 
+/* Responsive: Keep layout side-by-side, just adjust spacing and font size */
+@media (max-width: 768px) {
+    .nav-content {
+        flex-wrap: wrap; /* Allow items to wrap to next line if needed */
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-menu li a {
+        font-size: 0.95rem;
+        padding: 5px;
+    }
+
+    .site-title {
+        font-size: 1.1rem;
+    }
+
+    .footer-icons {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .footer-icons a {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-content,
+    .nav-menu {
+        justify-content: center;
+    }
+
+    .nav-menu li a {
+        font-size: 0.85rem;
+    }
+
+    .footer-icons a {
+        font-size: 1rem;
+        margin: 5px;
+    }
+}
