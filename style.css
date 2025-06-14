@@ -46,12 +46,14 @@ body {
 .site-title {
     font-size: 1.3rem;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .nav-menu {
     list-style: none;
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .nav-menu li a {
@@ -68,25 +70,6 @@ body {
 /* 🔲 Container (Main App Area) */
 .container {
     max-width: 1000px;
-    margin: 90px auto 40px auto;
-    /* Push below navbar */
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-}
-
-h1,
-h2,
-h3 {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 15px;
-}
-
-.container {
-    flex: 1;
-    max-width: 1000px;
     margin: 90px auto 30px auto;
     padding: 20px;
     background: white;
@@ -94,9 +77,7 @@ h3 {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     text-align: center;
     color: var(--secondary);
     margin-bottom: 16px;
@@ -137,7 +118,6 @@ h1 {
     display: block;
 }
 
-/* Centered PDF Upload Section */
 #pdf-tab {
     text-align: center;
 }
@@ -224,8 +204,7 @@ table {
     font-size: clamp(14px, 2vw, 16px);
 }
 
-th,
-td {
+th, td {
     padding: 10px;
     border: 1px solid #ddd;
     text-align: left;
@@ -236,8 +215,7 @@ th {
     color: white;
 }
 
-input,
-select {
+input, select {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -276,7 +254,47 @@ select {
     margin-bottom: 10px;
 }
 
-/* Responsive Tweaks */
+/* Footer */
+.main-footer {
+    width: 100%;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.footer-wrapper {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.footer-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.footer-icons a:hover {
+    color: #3498db;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Responsive Enhancements */
 @media (max-width: 768px) {
     .container {
         padding: 16px;
@@ -301,59 +319,9 @@ select {
     #pdf-upload {
         width: 100%;
     }
-}
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-/* Footer full-width and pinned to bottom if needed */
-.main-footer {
-    width: 100%;
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 20px 10px;
-    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-}
-
-.footer-wrapper {
-    max-width: 1000px;
-    margin: auto;
-}
-
-.footer-icons {
-    margin-top: 10px;
-}
-
-.footer-icons a {
-    color: white;
-    font-size: 1.5rem;
-    margin: 0 10px;
-    transition: 0.3s;
-    text-decoration: none;
-}
-
-.footer-icons a:hover {
-    color: #3498db;
-}
-
-ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-/* Responsive: Keep layout side-by-side, just adjust spacing and font size */
-@media (max-width: 768px) {
     .nav-content {
-        flex-wrap: wrap; /* Allow items to wrap to next line if needed */
+        flex-wrap: wrap;
         justify-content: space-between;
         gap: 10px;
     }
@@ -361,20 +329,25 @@ ul {
     .nav-menu {
         flex-wrap: wrap;
         gap: 10px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-menu li {
+        flex: 1 1 auto;
+        text-align: center;
     }
 
     .nav-menu li a {
         font-size: 0.95rem;
         padding: 5px;
+        display: block;
     }
 
     .site-title {
         font-size: 1.1rem;
-    }
-
-    .footer-icons {
-        flex-wrap: wrap;
-        gap: 10px;
+        text-align: center;
+        width: 100%;
     }
 
     .footer-icons a {
@@ -388,12 +361,43 @@ ul {
         justify-content: center;
     }
 
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .nav-menu li a {
         font-size: 0.85rem;
+    }
+
+    .site-title {
+        font-size: 1rem;
     }
 
     .footer-icons a {
         font-size: 1rem;
         margin: 5px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
