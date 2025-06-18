@@ -2,15 +2,27 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JNTUH SGPA & CGPA Calculator</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JNTUH SGPA & CGPA Calculator | Accurate & Instant Results</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Calculate your JNTUH SGPA, CGPA & percentage instantly. Supports R18, R16, R15 regulations with backlog handling. No login needed." />
+    <meta name="keywords"
+        content="JNTUH, SGPA calculator, CGPA calculator, JNTUH percentage, R18 GPA, R16 GPA, R15 GPA" />
+    <meta name="author" content="JNTUH Calculator Team" />
+
+
+    <!-- External files -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script src="script.js"></script>
+
+    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3813952127104172"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 
     <style>
         /*Home page code*/
@@ -64,109 +76,91 @@
 </head>
 
 <body>
+    <header>
+        <nav class="top-nav" role="navigation" aria-label="Primary Navigation">
+            <div class="nav-content">
+                <div class="site-title">JNTUH Calculator</div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="SGPA_CGPA_Calculator.html" role="navigation">SGPA & CGPA Calculator</a></li>
+                    <li><a href="about_us.html" role="navigation">About Us</a></li>
+                </ul>
+            </div>
+        </nav><br><br><br /><br />
+    </header>
 
-    <nav class="top-nav">
-        <div class="nav-content">
-            <div class="site-title">JNTUH Calculator</div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="SGPA & CGPA Calculator.html">SGPA & CGPA Calculator</a></li>
-                <li><a href="about us.html">About Us</a></li>
-            </ul>
-        </div>
-    </nav><br><br><br><br>
+    <main class="block">
+        <article>
+            <section>
+                <p>
+                    If you're a student under <strong>Jawaharlal Nehru Technological University Hyderabad
+                        (JNTUH)</strong>, you're probably familiar with the confusion that comes with calculating
+                    academic performance. This tool simplifies it all.
+                </p>
+            </section>
 
-    <div class="block"><br>
-        
-        <p>
-            If you're a student under <strong>Jawaharlal Nehru Technological University Hyderabad (JNTUH)</strong>,
-            you're probably familiar with the confusion and complexity that comes with tracking your academic
-            performance.
-            From downloading PDFs of mark memos to manually calculating your <strong>SGPA, CGPA, and
-                Percentage</strong>,
-            the process can be a real headache — especially when backlogs are involved.
-        </p>
+            <section>
+                <h2>🏛️ About JNTUH</h2>
+                <p>Established in 1972, <strong>JNTUH</strong> oversees numerous affiliated colleges and maintains
+                    strict academic regulations like R18, R16, and R15.</p>
+            </section>
 
-        <h2>🏛️ About JNTUH</h2>
-        <p>
-            Established in 1972, <strong>JNTUH</strong> is a premier technological university in Telangana. It oversees
-            hundreds of affiliated colleges and serves thousands of engineering, pharmacy, and management students. The
-            university is known for its strict academic structure, regular updates to regulations (like R18, R16, R15),
-            and a results system that challenges even the brightest minds to stay on track.
-        </p>
+            <section>
+                <h2>📘 Grading System Explained</h2>
+                <p>JNTUH uses a <strong>10-point grading system</strong>:</p>
+                <div class="feature-list">
+                    <p><strong>O (10):</strong> Outstanding (90–100%)</p>
+                    <p><strong>A+ (9):</strong> Excellent (80–89%)</p>
+                    <p><strong>A (8):</strong> Very Good (70–79%)</p>
+                    <p><strong>B+ (7):</strong> Good (60–69%)</p>
+                    <p><strong>B (6):</strong> Average (50–59%)</p>
+                    <p><strong>C (5):</strong> Pass (40–49%)</p>
+                    <p><strong>F (0):</strong> Fail (Below 40%)</p>
+                </div>
+            </section>
 
-        <h2>📘 Grading System Explained</h2>
-        <p>
-            JNTUH uses a <strong>10-point grading system</strong> where every subject is assigned credits. You receive
-            grade points based on your performance:
-        </p>
-        <div class="feature-list">
-            <p><strong>O (10):</strong> Outstanding (90–100%)</p>
-            <p><strong>A+ (9):</strong> Excellent (80–89%)</p>
-            <p><strong>A (8):</strong> Very Good (70–79%)</p>
-            <p><strong>B+ (7):</strong> Good (60–69%)</p>
-            <p><strong>B (6):</strong> Average (50–59%)</p>
-            <p><strong>C (5):</strong> Pass (40–49%)</p>
-            <p><strong>F (0):</strong> Fail (Below 40%)</p>
-        </div>
+            <section>
+                <h2>📊 How SGPA & CGPA Are Calculated</h2>
+                <p><code>SGPA = Σ (Credit × Grade Point) / Σ Credits</code></p>
+                <p>CGPA is the weighted average of all SGPAs over the semesters.</p>
+            </section>
 
-        <h2>📊 How SGPA & CGPA Are Calculated</h2>
-        <p>
-            SGPA (Semester Grade Point Average) is calculated using the formula:
-            <br>
-            <code><strong>SGPA = Σ (Credit × Grade Point) / Σ Credits</strong></code>
-        </p>
-        <p>
-            CGPA (Cumulative GPA) considers the weighted average of SGPAs from all semesters. This system ensures that
-            high-credit subjects have more influence on your final GPA.
-        </p>
+            <section>
+                <h2>❗ Common Student Challenges</h2>
+                <div class="feature-list">
+                    <p>Manual GPA calculations</p>
+                    <p>Backlog subject handling</p>
+                    <p>Confusion converting CGPA to percentage</p>
+                    <p>Impact of improvement exams</p>
+                </div>
+            </section>
 
-        <h2>❗ Common Student Challenges</h2>
-        <p>
-            Students often struggle with:
-        </p>
-        <div class="feature-list">
-            <p>Manually calculating weighted averages and credits</p>
-            <p>Handling supplementary (backlog) subjects in GPA calculations</p>
-            <p>Finding a consistent formula to convert CGPA to percentage</p>
-            <p>Not knowing how improvement exams affect CGPA</p>
-        </div>
+            <section>
+                <h2>🚀 Why This Calculator Is a Game-Changer</h2>
+                <div class="feature-list">
+                    <p>Supports all regulations (R18, R16, R15)</p>
+                    <p>Handles backlogs and reappears</p>
+                    <p>Calculates SGPA, CGPA, and percentage instantly</p>
+                    <p>No login or personal info required</p>
+                </div>
+            </section>
 
-        <h2>🚀 Why This Calculator is a Game-Changer</h2>
-        <p>
-            This tool is designed with <strong>JNTUH students in mind</strong>. Whether you're tracking your first
-            semester performance or preparing your final transcripts, our calculator:
-        </p>
-        <div class="feature-list">
-            <p>Supports all regulations (R18, R16, R15...)</p>
-            <p>Handles backlogs and reappear attempts</p>
-            <p>Calculates SGPA, CGPA, and Percentage instantly</p>
-            <p>Requires no login or personal details</p>
-            <p>Mobile and desktop-friendly interface</p>
-            <p>You can Calculate SGPA, CGPA, and Percentage Manually too</p>
-        </div>
+            <section>
+                <h2>📐 How Percentage is Calculated</h2>
+                <p><code>Percentage = (CGPA - 0.75) × 10</code></p>
+                <p>This formula is widely accepted for placements and applications.</p>
+            </section>
 
-        <h2>📐 How Percentage is Calculated</h2>
-        <p>
-            JNTUH doesn’t officially print percentages, but a commonly accepted formula is:
-            <br>
-            <code>Percentage = (CGPA - 0.75) × 10</code>
-            <br>
-            For example, a CGPA of 7.5 becomes 67.5%.
-        </p>
-        <p>
-            This approximation is widely used for job applications, higher studies, and government forms.
-        </p>
+            <section>
+                <h2>🎓 Built for You, the Student</h2>
+                <p>This calculator is built to help JNTUH students simplify academic planning and reduce stress.</p>
+            </section>
 
-        <h2>🎓 Built for You, the Student</h2>
-        <p>
-            We understand the student journey — the pressure, the confusion, the importance of each decimal point.
-            That’s why this calculator exists:
-            to make your academic life easier, faster, and stress-free.
-        </p>
-
-        <center><a class="button-link" href="SGPA & CGPA Calculator.html">Start Calculating Now</a></center>
-    </div>
+            <div style="text-align: center;">
+                <a class="button-link" href="SGPA_CGPA_Calculator.html">Start Calculating Now</a>
+            </div>
+        </article>
+    </main>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3813952127104172"
      crossorigin="anonymous"></script>
@@ -181,14 +175,15 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-
-    <footer class="main-footer">
+    <!-- Footer -->
+    <footer class="main-footer" role="contentinfo">
         <div class="footer-wrapper">
             <p>&copy; 2025 JNTUH SGPA & CGPA Calculator. All rights reserved.</p>
             <div class="footer-icons">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="https://t.me/JntuhR18notes"><i class="fab fa-telegram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/JntuhR18notes" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="privacy.html">Privacy Policy</a>
             </div>
         </div>
     </footer>
