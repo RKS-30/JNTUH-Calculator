@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const pdfStatus = document.getElementById('pdf-status');
     const pdfLoading = document.getElementById('pdf-loading');
 
-
     const pdfResultsContainer = document.getElementById('pdf-results-container');
     const semestersContainer = document.getElementById('semesters-container');
     const finalResults = document.getElementById('final-results');
@@ -175,6 +174,8 @@ document.addEventListener('DOMContentLoaded', function () {
         let totalCredits = 0;
         let totalGradePoints = 0;
 
+        semestersContainer.innerHTML = '';  // Clear previous
+
         results.semesters.forEach(semester => {
             let semesterCredits = 0;
             let semesterGradePoints = 0;
@@ -187,13 +188,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 semesterGradePoints += subjectGradePoints;
 
                 return `
-                            <tr>
-                                <td>${subject.code}</td>
-                                <td>${subject.name}</td>
-                                <td>${subject.credits}</td>
-                                <td>${subject.grade} (${gradeValue})</td>
-                            </tr>
-                        `;
+                    <tr>
+                        <td>${subject.code}</td>
+                        <td>${subject.name}</td>
+                        <td>${subject.credits}</td>
+                        <td>${subject.grade} (${gradeValue})</td>
+                    </tr>
+                `;
             }).join('');
 
             const calculatedSGPA = semesterCredits > 0 ? (semesterGradePoints / semesterCredits).toFixed(2) : 0;
@@ -203,31 +204,31 @@ document.addEventListener('DOMContentLoaded', function () {
             totalGradePoints += semesterGradePoints;
 
             const semesterHTML = `
-                        <div class="semester">
-                            <h3>Semester ${semester.name}</h3>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Code</th>
-                                        <th>Subject</th>
-                                        <th>Credits</th>
-                                        <th>Grade</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    ${subjectsHTML}
-                                </tbody>
-                            </table>
-                            <div class="result-item">
-                                <span>Calculated SGPA:</span>
-                                <span class="result-value">${calculatedSGPA}</span>
-                            </div>
-                            <div class="result-item">
-                                <span>Percentage:</span>
-                                <span class="result-value">${percentage}%</span>
-                            </div>
-                        </div>
-                    `;
+                <div class="semester">
+                    <h3>Semester ${semester.name}</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Subject</th>
+                                <th>Credits</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${subjectsHTML}
+                        </tbody>
+                    </table>
+                    <div class="result-item">
+                        <span>Calculated SGPA:</span>
+                        <span class="result-value">${calculatedSGPA}</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Percentage:</span>
+                        <span class="result-value">${percentage}%</span>
+                    </div>
+                </div>
+            `;
 
             semestersContainer.innerHTML += semesterHTML;
         });
@@ -237,22 +238,29 @@ document.addEventListener('DOMContentLoaded', function () {
         const percentage = (cgpa * 10).toFixed(2);
 
         finalResults.innerHTML = `
-                    <div class="semester">
-                        <h3>Final Results</h3>
-                        <div class="result-item">
-                            <span>Total Credits:</span>
-                            <span class="result-value">${totalCredits}</span>
-                        </div>
-                        <div class="result-item">
-                            <span>CGPA:</span>
-                            <span class="result-value">${cgpa}</span>
-                        </div>
-                        <div class="result-item">
-                            <span>Percentage (CGPA × 10):</span>
-                            <span class="result-value">${percentage}%</span>
-                        </div>
-                    </div>
-                `;
+            <div class="semester">
+                <h3>Final Results</h3>
+                <div class="result-item">
+                    <span>Total Credits:</span>
+                    <span class="result-value">${totalCredits}</span>
+                </div>
+                <div class="result-item">
+                    <span>CGPA:</span>
+                    <span class="result-value">${cgpa}</span>
+                </div>
+                <div class="result-item">
+                    <span>Percentage (CGPA × 10):</span>
+                    <span class="result-value">${percentage}%</span>
+                </div>
+            </div>
+        `;
+
+        // Refresh AdSense ads after results update
+        try {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (e) {
+            console.error('AdSense error', e);
+        }
     }
 
     function addManualSemester() {
@@ -260,40 +268,40 @@ document.addEventListener('DOMContentLoaded', function () {
         const semesterDiv = document.createElement('div');
         semesterDiv.className = 'semester';
         semesterDiv.innerHTML = `
-                    <h3>Semester ${semesterCount}</h3>
-                    <button class="remove-semester btn-danger">× Remove</button>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Subject</th>
-                                <th>Credits</th>
-                                <th>Grade</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="text" placeholder="Subject name"></td>
-                                <td><input type="number" min="0" step="0.5" value="3"></td>
-                                <td>
-                                    <select>
-                                        <option value="10">O (10)</option>
-                                        <option value="9">A+ (9)</option>
-                                        <option value="8">A (8)</option>
-                                        <option value="7">B+ (7)</option>
-                                        <option value="6">B (6)</option>
-                                        <option value="5">C (5)</option>
-                                        <option value="0">F (0)</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <button class="add-subject btn-success">+</button>
-                                    <button class="remove-subject btn-danger">-</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                `;
+            <h3>Semester ${semesterCount}</h3>
+            <button class="remove-semester btn-danger">× Remove</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Credits</th>
+                        <th>Grade</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder="Subject name"></td>
+                        <td><input type="number" min="0" step="0.5" value="3"></td>
+                        <td>
+                            <select>
+                                <option value="10">O (10)</option>
+                                <option value="9">A+ (9)</option>
+                                <option value="8">A (8)</option>
+                                <option value="7">B+ (7)</option>
+                                <option value="6">B (6)</option>
+                                <option value="5">C (5)</option>
+                                <option value="0">F (0)</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button class="add-subject btn-success">+</button>
+                            <button class="remove-subject btn-danger">-</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        `;
 
         manualSemestersContainer.appendChild(semesterDiv);
 
@@ -324,27 +332,28 @@ document.addEventListener('DOMContentLoaded', function () {
     function addSubjectToTable(tbody) {
         const newRow = document.createElement('tr');
         newRow.innerHTML = `
-                    <td><input type="text" placeholder="Subject name"></td>
-                    <td><input type="number" min="0" step="0.5" value="3"></td>
-                    <td>
-                        <select>
-                            <option value="10">O (10)</option>
-                            <option value="9">A+ (9)</option>
-                            <option value="8">A (8)</option>
-                            <option value="7">B+ (7)</option>
-                            <option value="6">B (6)</option>
-                            <option value="5">C (5)</option>
-                            <option value="0">F (0)</option>
-                        </select>
-                    </td>
-                    <td>
-                        <button class="add-subject btn-success">+</button>
-                        <button class="remove-subject btn-danger">-</button>
-                    </td>
-                `;
+            <td><input type="text" placeholder="Subject name"></td>
+            <td><input type="number" min="0" step="0.5" value="3"></td>
+            <td>
+                <select>
+                    <option value="10">O (10)</option>
+                    <option value="9">A+ (9)</option>
+                    <option value="8">A (8)</option>
+                    <option value="7">B+ (7)</option>
+                    <option value="6">B (6)</option>
+                    <option value="5">C (5)</option>
+                    <option value="0">F (0)</option>
+                </select>
+            </td>
+            <td>
+                <button class="add-subject btn-success">+</button>
+                <button class="remove-subject btn-danger">-</button>
+            </td>
+        `;
 
         tbody.appendChild(newRow);
 
+        // Add event listeners for new buttons
         newRow.querySelector('.add-subject').addEventListener('click', function () {
             addSubjectToTable(this.closest('tbody'));
         });
@@ -360,101 +369,121 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function updateSemesterNumbers() {
-        document.querySelectorAll('#manual-semesters-container .semester').forEach((semester, index) => {
+        const semesters = document.querySelectorAll('#manual-semesters-container .semester');
+        semesters.forEach((semester, index) => {
             semester.querySelector('h3').textContent = `Semester ${index + 1}`;
         });
     }
 
     function calculateManualResults() {
+        const semesters = document.querySelectorAll('#manual-semesters-container .semester');
+
         let totalCredits = 0;
         let totalGradePoints = 0;
-        let semesterResults = [];
 
-        document.querySelectorAll('#manual-semesters-container .semester').forEach((semesterDiv, index) => {
+        manualResultsContainer.innerHTML = '';
+
+        semesters.forEach((semester, index) => {
             let semesterCredits = 0;
             let semesterGradePoints = 0;
 
-            semesterDiv.querySelectorAll('tbody tr').forEach(row => {
-                const credits = parseFloat(row.querySelector('td:nth-child(2) input').value) || 0;
-                const grade = parseFloat(row.querySelector('td:nth-child(3) select').value) || 0;
+            const tbody = semester.querySelector('tbody');
+            const rows = tbody.querySelectorAll('tr');
 
-                semesterCredits += credits;
-                semesterGradePoints += credits * grade;
+            rows.forEach(row => {
+                const creditInput = row.querySelector('input[type="number"]');
+                const gradeSelect = row.querySelector('select');
+
+                const credits = parseFloat(creditInput.value);
+                const gradeValue = parseFloat(gradeSelect.value);
+
+                if (!isNaN(credits) && !isNaN(gradeValue)) {
+                    semesterCredits += credits;
+                    semesterGradePoints += credits * gradeValue;
+                }
             });
 
             const sgpa = semesterCredits > 0 ? (semesterGradePoints / semesterCredits).toFixed(2) : 0;
             const percentage = (sgpa * 10).toFixed(2);
 
-            semesterResults.push({
-                semester: index + 1,
-                credits: semesterCredits,
-                gradePoints: semesterGradePoints,
-                sgpa: sgpa,
-                percentage: percentage
-            });
-
             totalCredits += semesterCredits;
             totalGradePoints += semesterGradePoints;
+
+            manualResultsContainer.innerHTML += `
+                <div class="semester">
+                    <h3>Semester ${index + 1}</h3>
+                    <div class="result-item">
+                        <span>SGPA:</span>
+                        <span class="result-value">${sgpa}</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Percentage:</span>
+                        <span class="result-value">${percentage}%</span>
+                    </div>
+                </div>
+            `;
         });
 
         const cgpa = totalCredits > 0 ? (totalGradePoints / totalCredits).toFixed(2) : 0;
         const percentage = (cgpa * 10).toFixed(2);
 
-        let resultsHTML = '<div class="semester"><h3>Results</h3>';
+        manualFinalResults.innerHTML = `
+            <div class="semester">
+                <h3>Final Results</h3>
+                <div class="result-item">
+                    <span>Total Credits:</span>
+                    <span class="result-value">${totalCredits}</span>
+                </div>
+                <div class="result-item">
+                    <span>CGPA:</span>
+                    <span class="result-value">${cgpa}</span>
+                </div>
+                <div class="result-item">
+                    <span>Percentage (CGPA × 10):</span>
+                    <span class="result-value">${percentage}%</span>
+                </div>
+            </div>
+        `;
 
-        semesterResults.forEach(result => {
-            resultsHTML += `
-                        <div class="result-item">
-                            <span>Semester ${result.semester} SGPA:</span>
-                            <span class="result-value">${result.sgpa}</span>
-                        </div>
-                        <div class="result-item">
-                            <span>Semester ${result.semester} Percentage:</span>
-                            <span class="result-value">${result.percentage}%</span>
-                        </div>
-                    `;
-        });
-
-        resultsHTML += `
-                    <div class="result-item">
-                        <span>Total Credits:</span>
-                        <span class="result-value">${totalCredits}</span>
-                    </div>
-                    <div class="result-item">
-                        <span>CGPA:</span>
-                        <span class="result-value">${cgpa}</span>
-                    </div>
-                    <div class="result-item">
-                        <span>Percentage (CGPA × 10):</span>
-                        <span class="result-value">${percentage}%</span>
-                    </div>
-                </div>`;
-
-        manualFinalResults.innerHTML = resultsHTML;
-        manualResultsContainer.classList.remove('hidden');
+        // Refresh AdSense ads after manual calculation
+        try {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (e) {
+            console.error('AdSense error', e);
+        }
     }
 
     function convertGradeToValue(grade) {
-        // Correct JNTUH grade point values
-        if (grade === 'B+') return 7;
-        if (grade === 'B') return 6;
-        if (grade === 'A+') return 9;
-        if (grade === 'A') return 8;
-
+        // Map grades to values (you can adjust this if needed)
         const gradeMap = {
             'O': 10,
+            'A+': 9,
+            'A': 8,
+            'B+': 7,
+            'B': 6,
             'C': 5,
             'F': 0,
-            'ABS': 0,
+            'Absent': 0,
             'Ab': 0
         };
-        return gradeMap[grade] || 0;
+
+        // Normalize grade string
+        const normalized = grade.trim().toUpperCase();
+
+        // Try exact match or start with (for plus/minus)
+        for (const key in gradeMap) {
+            if (normalized.startsWith(key)) {
+                return gradeMap[key];
+            }
+        }
+
+        return 0;  // default fallback
     }
 
-    function showStatus(message, type) {
-        const statusDiv = document.getElementById('pdf-status');
-        statusDiv.textContent = message;
-        statusDiv.className = `status ${type}`;
-        statusDiv.classList.remove('hidden');
+    function showStatus(message, type = 'info') {
+        pdfStatus.textContent = message;
+        pdfStatus.className = '';
+        pdfStatus.classList.add(type);
+        pdfStatus.classList.remove('hidden');
     }
 });
