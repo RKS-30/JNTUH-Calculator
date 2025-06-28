@@ -2,151 +2,221 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JNTUH SGPA & CGPA Calculator</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JNTUH SGPA & CGPA Calculator</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
-  <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <script src="script.js"></script>
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3813952127104172"
-    crossorigin="anonymous"></script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3813952127104172"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-  <nav class="top-nav" role="navigation" aria-label="Primary Navigation">
-    <div class="nav-content">
-      <div class="site-title">JNTUH Calculator</div>
-      <ul class="nav-menu">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="SGPA_CGPA_Calculator.html">SGPA & CGPA Calculator</a></li>
-        <li><a href="about_us.html">About Us</a></li>
-      </ul>
-    </div>
-  </nav>
+    <nav class="top-nav" role="navigation" aria-label="Primary Navigation">
+        <div class="nav-content">
+            <div class="site-title">JNTUH Calculator</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="SGPA_CGPA_Calculator.html">SGPA & CGPA Calculator</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <main class="container">
-    <h1>JNTUH SGPA & CGPA Calculator</h1>
+    <main class="container">
 
-    <!-- Description Blog -->
-    <div class="description-blog" style="margin-bottom: 25px; padding: 20px; background-color: #f0f8ff; border-left: 5px solid #3498db; border-radius: 8px; font-size: 1.05rem; line-height: 1.6;">
-      <h2 style="color: #2c3e50; margin-bottom: 10px;">📘 What This Tool Is About</h2>
-      <p>
-        This website helps you <strong>automatically calculate</strong> your <span style="color:#27ae60;"><strong>SGPA (Semester Grade Point Average)</strong></span>, <span style="color:#e67e22;"><strong>CGPA (Cumulative GPA)</strong></span>, and overall <span style="color:#e74c3c;"><strong>percentage</strong></span> — just by uploading your result PDF. It’s fast, accurate, and handles all cases including <strong>backlogs</strong>, labs, projects, and more.
-      </p>
+        <h1>JNTUH SGPA & CGPA Calculator</h1>
 
-      <h2 style="color: #2c3e50; margin-top: 20px;">📥 How to Get Started</h2>
-      <ol style="margin-left: 20px; padding-left: 10px;">
-        <li>🔎 Visit the JNTUH results(vercel) portal: <a href="https://jntuhresults.vercel.app/academicresult#google_vignette" target="_blank" style="color: #3498db;"><strong>jntuhresults.vercel.app</strong></a></li>
-        <li>🔎 Visit the official JNTUH results portal: <a href="http://results.jntuh.ac.in/" target="_blank" style="color: #3498db;"><strong>jntuhresults official</strong></a></li>
-        <li>🧾 Enter your Hall Ticket Number to view your result.</li>
-        <li>📄 At the bottom of your result page, click <strong>"Download PDF"</strong>.</li>
-        <li>📂 Come back here and <strong>upload the downloaded PDF</strong> using the “Choose File” button below.</li>
-        <li>⚙️ Click <strong>“Process PDF”</strong> — and boom 💥! You’ll see your SGPA, CGPA, and percentage semester-wise.</li>
-      </ol>
+        <!-- Description Blog -->
+        <div class="description-blog"
+            style="margin-bottom: 25px; padding: 20px; background-color: #f0f8ff; border-left: 5px solid #3498db; border-radius: 8px; font-size: 1.05rem; line-height: 1.6;">
+            <h2 style="color: #2c3e50; margin-bottom: 10px;">📘 What This Tool Is About</h2>
+            <p>
+                This website helps you <strong>automatically calculate</strong> your <span
+                    style="color:#27ae60;"><strong>SGPA (Semester Grade Point Average)</strong></span>, <span
+                    style="color:#e67e22;"><strong>CGPA (Cumulative GPA)</strong></span>, and overall <span
+                    style="color:#e74c3c;"><strong>percentage</strong></span> — just by uploading your result PDF. It’s
+                fast, accurate, and handles all cases including <strong>backlogs</strong>, labs, projects, and more.
+            </p>
 
-      <h2 style="color: #2c3e50; margin-top: 20px;">✍️ No PDF? No Problem!</h2>
-      <p>
-        You can also switch to the <strong>Manual Input</strong> tab to add your subjects, credits, and grades manually. It’s flexible for any student who doesn’t have access to their PDF yet.
-      </p>
+            <h2 style="color: #2c3e50; margin-top: 20px;">📥 How to Get Started</h2>
+            <ol style="margin-left: 20px; padding-left: 10px;">
+                <li>🔎 Visit the JNTUH results(vercel) portal: <a
+                        href="https://jntuhresults.vercel.app/academicresult#google_vignette" target="_blank"
+                        style="color: #3498db;"><strong>jntuhresults.vercel.app</strong></a></li>
+                <li>🔎 Visit the official JNTUH results portal: <a href="http://results.jntuh.ac.in/" target="_blank"
+                        style="color: #3498db;"><strong>jntuhresults official</strong></a></li>
+                <li>🧾 Enter your Hall Ticket Number to view your result.</li>
+                <li>📄 At the bottom of your result page, click <strong>"Download PDF"</strong>.</li>
+                <li>📂 Come back here and <strong>upload the downloaded PDF</strong> using the “Choose File” button
+                    below.</li>
+                <li>⚙️ Click <strong>“Process PDF”</strong> — and boom 💥! You’ll see your SGPA, CGPA, and percentage
+                    semester-wise.</li>
+            </ol>
 
-      <p style="margin-top: 15px;">
-        Built for students. Optimized for simplicity. 💙
-      </p>
-    </div>
+            <h2 style="color: #2c3e50; margin-top: 20px;">✍️ No PDF? No Problem!</h2>
+            <p>
+                You can also switch to the <strong>Manual Input</strong> tab to add your subjects, credits, and grades
+                manually. It’s flexible for any student who doesn’t have access to their PDF yet.
+            </p>
 
-    <!-- Video Guide Section -->
-    <div style="margin-bottom: 30px; text-align: center;">
-      <h2 style="color: #2c3e50; margin-bottom: 15px;">🎥 Watch: How to Use the Tool</h2>
-      <div style="position: relative; max-width: 800px; margin: 0 auto; border-radius: 8px; overflow: hidden;">
-        <video controls style="width: 100%; height: auto; border-radius: 8px;">
-          <source src="Static/Guid-video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
+            <p style="margin-top: 15px;">
+                Built for students. Optimized for simplicity. 💙
+            </p>
+        </div>
 
-    <!-- Webpage Disclaimer -->
-    <div style="margin-top: 30px; background-color: #fff9e6; border-left: 5px solid #ffcc00; padding: 16px 20px; border-radius: 8px; color: #664d03; font-size: 1rem;">
-      <strong>⚠️ Disclaimer:</strong><br />
-      This calculator is built to make your academic life easier — especially if you’re juggling backlogs or just want quick insights. It works hard to read your JNTUH result PDFs and crunch your SGPA, CGPA, and percentage based on the latest available data.
-      <br /><br />
-      However, if you're still clearing some subjects, keep in mind that these results are <strong>best-effort estimations</strong>. Once all subjects are passed and officially processed by JNTUH, your final CGPA or percentage might vary slightly.
-      <br /><br />
-      So use this tool for clarity and confidence — just remember, your official transcript always has the final say. 📜✨
-    </div>
+        <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+            data-ad-client="ca-pub-3813952127104172" data-ad-slot="5391047537"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
 
-    <!-- Note for PDF Downloading -->
-    <div style="margin: 20px 0; padding: 15px; background-color: #ffe6e6; border-left: 5px solid #e74c3c; border-radius: 8px; color: #c0392b; font-size: 1rem;">
-      <strong>📌 Important Note:</strong><br />
-      Please upload <strong>only PDF files</strong> that are <strong>downloaded from the official JNTUH Results Portal</strong> or the <strong>jntuhresults.vercel.app</strong> website.
-      <br /><br />
-      ❗ If the file is in any other format (like images or screenshots), or if it’s not the original downloaded PDF, the calculator may not be able to read your results correctly.
-    </div>
+        <!-- Video Guide Section -->
+        <div style="margin-bottom: 30px; text-align: center;">
+            <h2 style="color: #2c3e50; margin-bottom: 15px;">🎥 Watch: How to Use the Tool</h2>
+            <div style="position: relative; max-width: 800px; margin: 0 auto; border-radius: 8px; overflow: hidden;">
+                <video controls style="width: 100%; height: auto; border-radius: 8px;">
+                    <source src="Static/Guid-video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
 
-    <!-- PDF Upload / Manual Input Tabs -->
-    <div class="tab-container" role="tablist">
-      <div class="tab active" role="tab" aria-selected="true" tabindex="0" data-tab="pdf">PDF Upload</div>
-      <div class="tab" role="tab" aria-selected="false" tabindex="-1" data-tab="manual">Manual Input</div>
-    </div>
+        <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
+            data-ad-format="fluid" data-ad-client="ca-pub-3813952127104172" data-ad-slot="4613701222"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
 
-    <div id="pdf-tab" class="tab-content active" tabindex="0">
-      <h2>Upload PDF Results</h2>
-      <input type="file" id="pdf-upload" accept=".pdf" />
-      <button id="process-pdf" class="btn-success">Process PDF</button>
-      <div id="pdf-status" class="status hidden"></div>
-      <div id="pdf-loading" class="loading hidden"></div>
+        <!-- Webpage Disclaimer -->
+        <div
+            style="margin-top: 30px; background-color: #fff9e6; border-left: 5px solid #ffcc00; padding: 16px 20px; border-radius: 8px; color: #664d03; font-size: 1rem;">
+            <strong>⚠️ Disclaimer:</strong><br />
+            This calculator is built to make your academic life easier — especially if you’re juggling backlogs or just
+            want quick insights. It works hard to read your JNTUH result PDFs and crunch your SGPA, CGPA, and percentage
+            based on the latest available data.
+            <br /><br />
+            However, if you're still clearing some subjects, keep in mind that these results are <strong>best-effort
+                estimations</strong>. Once all subjects are passed and officially processed by JNTUH, your final CGPA or
+            percentage might vary slightly.
+            <br /><br />
+            So use this tool for clarity and confidence — just remember, your official transcript always has the final
+            say. 📜✨
+        </div>
 
-      <div id="pdf-results-container" class="hidden">
-        <h2>Results</h2>
-        <div id="semesters-container"></div>
-        <div id="final-results"></div>
-      </div>
-    </div>
+        <!-- Note for PDF Downloading -->
+        <div
+            style="margin: 20px 0; padding: 15px; background-color: #ffe6e6; border-left: 5px solid #e74c3c; border-radius: 8px; color: #c0392b; font-size: 1rem;">
+            <strong>📌 Important Note:</strong><br />
+            Please upload <strong>only PDF files</strong> that are <strong>downloaded from the official JNTUH Results
+                Portal</strong> or the <strong>jntuhresults.vercel.app</strong> website.
+            <br /><br />
+            ❗ If the file is in any other format (like images or screenshots), or if it’s not the original downloaded
+            PDF, the calculator may not be able to read your results correctly.
+        </div>
 
-    <div id="manual-tab" class="tab-content" tabindex="0">
-      <h2>Manual Input</h2>
-      <div id="manual-semesters-container"></div>
+        <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+            data-ad-client="ca-pub-3813952127104172" data-ad-slot="2698098290"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
 
-      <div style="text-align: center;">
-        <button id="add-semester" class="btn-success">+ Add Semester</button>
-        <button id="calculate-manual" class="btn-success">Calculate CGPA</button>
-      </div>
+        <!-- PDF Upload / Manual Input Tabs -->
+        <div class="tab-container" role="tablist">
+            <div class="tab active" role="tab" aria-selected="true" tabindex="0" data-tab="pdf">PDF Upload</div>
+            <div class="tab" role="tab" aria-selected="false" tabindex="-1" data-tab="manual">Manual Input</div>
+        </div>
 
-      <div id="manual-results-container" class="hidden">
-        <h3>Results</h3>
-        <div id="manual-final-results"></div>
-      </div>
-    </div>
-  </main>
+        <div id="pdf-tab" class="tab-content active" tabindex="0">
+            <h2>Upload PDF Results</h2>
+            <input type="file" id="pdf-upload" accept=".pdf" />
+            <button id="process-pdf" class="btn-success">Process PDF</button>
+            <div id="pdf-status" class="status hidden"></div>
+            <div id="pdf-loading" class="loading hidden"></div>
 
-  <!-- Ad Section -->
-  <section style="margin: 20px 0; text-align: center;">
-    <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-format="autorelaxed"
-      data-ad-client="ca-pub-3813952127104172"
-      data-ad-slot="2698098290"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </section>
+            <div id="pdf-results-container" class="hidden">
+                <h2>Results</h2>
+                <div id="semesters-container"></div>
+                <div id="final-results"></div>
+            </div>
+        </div>
 
-  <!-- Footer -->
-  <footer class="main-footer" role="contentinfo">
-    <div class="footer-wrapper">
-      <p>&copy; 2025 JNTUH SGPA & CGPA Calculator. All rights reserved.</p>
-      <div class="footer-icons">
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://t.me/JntuhR18notes" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="privacy.html">Privacy Policy</a>
-      </div>
-    </div>
-  </footer>
+        <div id="manual-tab" class="tab-content" tabindex="0">
+            <h2>Manual Input</h2>
+            <div id="manual-semesters-container"></div>
+
+            <div style="text-align: center;">
+                <button id="add-semester" class="btn-success">+ Add Semester</button>
+                <button id="calculate-manual" class="btn-success">Calculate CGPA</button>
+            </div>
+
+            <div id="manual-results-container" class="hidden">
+                <h3>Results</h3>
+                <div id="manual-final-results"></div>
+            </div>
+        </div>
+
+
+        <section style="margin-top: 40px; background-color: #f0f8ff; padding: 20px; border-radius: 8px;">
+            <h2 style="color: #2c3e50;">📘 Understanding JNTUH SGPA & CGPA Calculation</h2>
+            <p>
+                SGPA stands for Semester Grade Point Average and represents a student's performance for a single
+                semester.
+                CGPA is the Cumulative Grade Point Average that combines results from all semesters.
+                JNTUH follows a credit-based evaluation system where each subject is assigned a weight.
+            </p>
+            <p>
+                To improve your CGPA, it’s crucial to focus on core subjects and lab components since they carry more
+                credits.
+                This tool is designed to simplify your academic tracking.
+            </p>
+            <p>
+                Remember, official transcripts will always provide final results. Use this calculator as a support
+                resource.
+            </p>
+        </section>
+    </main>
+
+
+    <!-- Ad Section -->
+    <section style="margin: 20px 0; text-align: center;">
+        <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+            data-ad-client="ca-pub-3813952127104172" data-ad-slot="2454409920"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3813952127104172"
+            data-ad-slot="6828914990" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+        <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
+            data-ad-format="fluid" data-ad-client="ca-pub-3813952127104172" data-ad-slot="4613701222"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer" role="contentinfo">
+        <div class="footer-wrapper">
+            <p>&copy; 2025 JNTUH SGPA & CGPA Calculator. All rights reserved.</p>
+            <div class="footer-icons">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/JntuhR18notes" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 
