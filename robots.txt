@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://jntuh-calculator.vercel.app/sitemap.xml
+Sitemap: https://jntuh-calculator.vercel.app/sitemap2.xml
