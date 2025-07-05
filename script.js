@@ -31,8 +31,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const manualResultsContainer = document.getElementById('manual-results-container');
     const manualFinalResults = document.getElementById('manual-final-results');
 
-    // Initialize with one semester
-    addManualSemester();
+    // Initialize with one semester only if container exists
+    if (manualSemestersContainer) {
+        addManualSemester();
+    }
+
 
     // Event Listeners
     processPdfBtn.addEventListener('click', processPdf);
